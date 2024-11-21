@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <h1>Bienvenue à La Guilde Alpha</h1>
+        <p class="lead">Votre communauté de passionnés de jeux de rôles</p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Nos Jeux</h5>
+                    <p class="card-text">Découvrez nos différentes campagnes et systèmes de jeux.</p>
+                    <a href="/jeux" class="btn btn-primary">Explorer</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Événements</h5>
+                    <p class="card-text">Retrouvez tous nos événements à venir et nos soirées jeux.</p>
+                    <a href="/evenements" class="btn btn-primary">Calendrier</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Rejoignez-nous</h5>
+                    <p class="card-text">Inscrivez-vous pour participer à nos activités et rencontrer d'autres joueurs.</p>
+                    <a href="/inscription" class="btn btn-success">S'inscrire</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

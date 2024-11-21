@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Événements à venir</h1>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Soirée Découverte</h5>
+                    <p class="card-text">Initiation gratuite aux jeux de rôles pour les nouveaux.</p>
+                    <p><strong>Date:</strong> 15 Juillet 2023</p>
+                    <p><strong>Heure:</strong> 19h - 22h</p>
+                    <p><strong>Lieu:</strong> Local de la Guilde</p>
+                    <a href="#" class="btn btn-primary">S'inscrire</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Convention Annuelle</h5>
+                    <p class="card-text">Journée complète de jeux, tournois et animations.</p>
+                    <p><strong>Date:</strong> 22-23 Juillet 2023</p>
+                    <p><strong>Lieu:</strong> Centre Culturel</p>
+                    <a href="#" class="btn btn-primary">Réserver</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tournoi D&D</h5>
+                    <p class="card-text">Compétition amicale de Donjons & Dragons.</p>
+                    <p><strong>Date:</strong> 5 Août 2023</p>
+                    <p><strong>Heure:</strong> 14h - 20h</p>
+                    <p><strong>Niveau:</strong> Confirmés</p>
+                    <a href="#" class="btn btn-primary">Participer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="alert alert-warning mt-4">
+        <strong>Attention :</strong> Le nombre de places est limité pour chaque événement. Inscrivez-vous rapidement !
+    </div>
+</div>
+{% endblock %}

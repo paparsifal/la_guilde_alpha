@@ -1,0 +1,133 @@
+---
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+// Trouver l'index du premier h2
+const h2Index = content.indexOf('\n## ');
+let preview = content;
+let details = '';
+let hasMore = false;
+
+if (h2Index !== -1) {
+  preview = content.slice(0, h2Index).trim();
+  details = content.slice(h2Index).trim();
+  hasMore = true;
+}
+---
+
+<div class="relative content-preview">
+  <div class="prose prose-sm max-w-none">
+    <div class="markdown-content preview-content">
+      <Fragment set:html={preview} />
+    </div>
+    {hasMore && (
+      <>
+        <div class="markdown-content details-content hidden">
+          <Fragment set:html={details} />
+        </div>
+        <div class="mt-2">
+          <button
+            class="text-guild-primary hover:text-guild-secondary text-sm font-medium toggle-content"
+          >
+            En savoir plus
+          </button>
+        </div>
+      </>
+    )}
+  </div>
+</div>
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  .markdown-content :global(h1),
+  .markdown-content :global(h2),
+  .markdown-content :global(h3),
+  .markdown-content :global(h4),
+  .markdown-content :global(h5),
+  .markdown-content :global(h6) {
+    @apply font-bold mt-4 mb-2;
+  }
+
+  .markdown-content :global(h1) {
+    @apply text-2xl;
+  }
+
+  .markdown-content :global(h2) {
+    @apply text-xl;
+  }
+
+  .markdown-content :global(h3) {
+    @apply text-lg;
+  }
+
+  .markdown-content :global(ul),
+  .markdown-content :global(ol) {
+    @apply pl-5 my-2;
+  }
+
+  .markdown-content :global(ul) {
+    @apply list-disc;
+  }
+
+  .markdown-content :global(ol) {
+    @apply list-decimal;
+  }
+
+  .markdown-content :global(li) {
+    @apply mb-1;
+  }
+
+  .markdown-content :global(p) {
+    @apply my-2;
+  }
+
+  .markdown-content :global(strong) {
+    @apply font-bold;
+  }
+
+  .markdown-content :global(em) {
+    @apply italic;
+  }
+
+  .markdown-content :global(a) {
+    @apply text-guild-primary hover:text-guild-secondary underline;
+  }
+
+  .markdown-content :global(blockquote) {
+    @apply pl-4 border-l-4 border-gray-300 italic my-2;
+  }
+
+  .markdown-content :global(code) {
+    @apply bg-gray-100 px-1 rounded;
+  }
+
+  .markdown-content :global(pre) {
+    @apply bg-gray-100 p-4 rounded my-2;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const contentPreviews = document.querySelectorAll('.content-preview');
+    
+    contentPreviews.forEach(preview => {
+      const toggleButton = preview.querySelector('.toggle-content');
+      const detailsContent = preview.querySelector('.details-content');
+      
+      if (toggleButton && detailsContent) {
+        toggleButton.addEventListener('click', () => {
+          detailsContent.classList.toggle('hidden');
+          toggleButton.textContent = detailsContent.classList.contains('hidden') 
+            ? 'En savoir plus' 
+            : 'Voir moins';
+        });
+      }
+    });
+  });
+</script>

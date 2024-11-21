@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Calendrier des parties">
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-guild-primary mb-8 text-center">Calendrier des parties</h1>
+    
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <div class="relative" style="padding-bottom: 75%;">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=alphadata%40guildealpha.com&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1&height=600&wkst=2&hl=fr&bgcolor=%23ffffff&ctz=Europe%2FParis"
+          class="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gray-100 rounded-lg p-8">
+      <h2 class="text-2xl font-bold text-guild-primary mb-4">Comment s'inscrire à une partie ?</h2>
+      <div class="space-y-4 text-gray-600">
+        <p>
+          1. Consultez le calendrier ci-dessus pour voir les parties disponibles
+        </p>
+        <p>
+          2. Cliquez sur la partie qui vous intéresse pour voir les détails
+        </p>
+        <p>
+          3. Contactez le MJ via notre <a href="/contact" class="text-guild-secondary hover:text-guild-primary">formulaire de contact</a> en précisant :
+        </p>
+        <ul class="list-disc list-inside ml-4">
+          <li>La date et l'heure de la partie</li>
+          <li>Le nom de la campagne</li>
+          <li>Votre niveau d'expérience</li>
+          <li>Si vous avez déjà un personnage</li>
+        </ul>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a 
+          href="https://calendar.google.com/calendar/u/0?cid=YWxwaGFkYXRhQGd1aWxkZWFscGhhLmNvbQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-guild-secondary text-white px-6 py-3 rounded-lg hover:bg-guild-primary transition-colors"
+        >
+          Ajouter le calendrier à Google Calendar
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
