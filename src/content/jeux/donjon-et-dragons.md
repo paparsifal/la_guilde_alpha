@@ -9,6 +9,7 @@ players:
 level: "Débutant"
 frequency: "Tous les mardis soir"
 draft: false
+image: "/images/jeux/dnd.jpg"
 ---
 
 # Donjons & Dragons - Les Mystères de Baldur's Gate

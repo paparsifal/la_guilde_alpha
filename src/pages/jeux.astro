@@ -15,8 +15,7 @@ const jeux = await getCollection('jeux', ({ data }) => {
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {jeux.map(async (jeu) => {
-        const { Content } = await jeu.render();
-        const rawContent = marked.parse(jeu.body);
+        const rawContent = await marked.parse(jeu.body);
         return (
           <article class="bg-white rounded-lg shadow-md overflow-hidden">
             {jeu.data.image && (
@@ -64,7 +63,7 @@ const jeux = await getCollection('jeux', ({ data }) => {
               </div>
 
               <div class="mt-4">
-                <ContentPreview content={rawContent} maxLines={5} />
+                <ContentPreview content={rawContent} />
               </div>
 
               <div class="mt-6">
