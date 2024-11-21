@@ -6,7 +6,7 @@ interface Props {
 const { content } = Astro.props;
 
 // Trouver l'index du premier h2
-const h2Index = content.indexOf('\n## ');
+const h2Index = content.indexOf('<h2');
 let preview = content;
 let details = '';
 let hasMore = false;
